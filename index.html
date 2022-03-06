@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>CSS/SCSS</title>
+</head>
+
+<body>
+    <a href="#" class="scroll-top-button">Вверх</a>
+    <div class="wrapper">
+        <header class="header">
+            <img src="img/logo-css.png" alt="logo" class="header__logo">
+            <nav class="nav">
+                <ul class="nav__links">
+                    <li class="nav__link"><a href="#entry">Введение</a></li>
+                    <li class="nav__link"><a href="#aboutCSS">О Css</a></li>
+                    <li class="nav__link"><a href="#aboutSCSS">О Scss</a></li>
+                    <li class="nav__link"><a href="#compare">Сравнение CSS и SCSS</a></li>
+                </ul>
+            </nav>
+
+            <div id="burger" class="header__burger">
+                <span></span>
+            </div>
+        </header>
+
+        <main class="main">
+            <aside clas="main__aside aside">
+                <nav class="aside-nav">
+                    <p class="aside-nav__text">Навигация:</p>
+                    <ol clas="aside-nav__links">
+                        <li class="aside-nav__link"><a href="#aboutCSS">Что такое CSS?</a>
+                            <ol>
+                                <li class="aside-nav__link"><a href="#includeCSS">Подключение CSS к HTML-документу</a>
+                                </li>
+                                <li class="aside-nav__link"><a href="#syntaxCSS">Синтаксис CSS</a></li>
+                                <li class="aside-nav__link"><a href="#inheritСSS">Наследование в CSS</a></li>
+                                <li class="aside-nav__link"><a href="#cascadesCSS">Каскады и приоритеты в CSS</a></li>
+                            </ol>
+
+                        </li>
+                        <li class="aside-nav__link"><a href="aboutSCSS">Что такое SCSS?</a>
+                        <li class="aside-nav__link"><a href="#compare">Сравнение CSS и SCSS</a>
+                    </ol>
+                </nav>
+
+                <p class="aside__text">Интересные ссылки:</p>
+                <a target="_blanck" class="aside__card card" href="https://html5book.ru/css-grid">
+                    <img class="card__img" src="img/grid.png" alt="Grid">
+                    <p class="card__text">Руководство по CSS Grid Layout</p>
+                </a>
+                <a href="https://html5book.ru/css3-flexbox/" target="_blanck" class="aside__card card">
+                    <img class="card__img" src="img/flexbox-css.jpg" alt="Flex">
+                    <p class="card__text">Использование CSS Flex-box в верстке</p>
+                </a>
+                <a href="http://htmlbook.ru/css/help" target="_blanck" class="aside__card card">
+                    <img class="card__img" src="img/css.jpg" alt="CSS">
+                    <p class="card__text">Справочник CSS</p>
+                </a>
+                <a href="https://sass-scss.ru/" target="_blanck" class="aside__card card">
+                    <img class="card__img" src="img/sass.jpg" alt="CSS">
+                    <p class="card__text">SASS/SCSS - документация на русском</p>
+                </a>
+                <a href="https://itchief.ru/html-and-css/media-queries" target="_blanck" class="aside__card card">
+                    <img class="card__img" src="img/css-media-queries.jpg" alt="CSS">
+                    <p class="card__text">CSS - медиа запросы</p>
+                </a>
+                <a href="https://learn.javascript.ru/css-animations" target="_blanck" class="aside__card card">
+                    <img class="card__img" src="img/css_animation.png" alt="CSS">
+                    <p class="card__text">CSS - анимации и переходы</p>
+                </a>
+            </aside>
+
+            <section class="section">
+                <div class="section__block">
+                    <h1 id="entry" class="section__title">Введение</h1>
+                    <p class="section__text">Данная страничка посвящена формальному языку описания внешнего вида
+                        веб-страниц в браузере <span class="section__text_abb">CSS</span> и его
+                        препроцессору <span class="section__text_abb">SCSS</span>. Здесь можно найти ответы на
+                        главные вопросы: что такое CSS, SCSS, для чего они нужны и где применяются?</p>
+                </div>
+
+                <div class="section__block">
+                    <h1 id="aboutCSS" class="section__title">Что такое CSS?</h1>
+                    <img src="img/css-files.jpg" alt="what is css" class="section__img">
+                    <p class="section__text">
+                        Как и HTML, CSS на самом деле не является языком программирования. Это не язык разметки - это
+                        язык таблицы стилей <span class="section__text_abb">(CSS - Cascading Style Sheets, каскадные
+                            таблицы стилей)</span>.
+                        Это одна из базовых технологий в современном интернете. Практически ни один сайт не обходится
+                        без CSS, поэтому HTML и CSS действуют в единой связке.
+                    </p>
+                    <p class="section__text">
+                        Теперь ответим на вопрос о том, <span class="section__text_abb">что делает CSS</span>. Всё
+                        просто: если HTML структурирует контент на
+                        странице, то <span class="section__text_abb">CSS позволяет отформатировать его, сделать более
+                            привлекательным для читателя</span>.
+                        Изначально веб-разработчики использовали исключительно HTML — так было на заре развития
+                        интернет-технологий. С помощью разметки можно было выделить параграф, заголовок, изменить
+                        начертание текста. А большего и не требовалось.
+                        Со временем этих возможностей стало мало — и появилась технология форматирования без изменения
+                        самого содержимого и структуры документа. CSS решил проблему «зоопарка» тегов форматирования,
+                        когда разные браузеры поддерживали разные теги. Их унификация и единая база упростили работу с
+                        веб-документами и облегчили жизнь веб-мастерам.
+                    </p>
+
+                    <h2 id="includeCSS" class="section__title_h2">Подключение CSS к HTML-документу</h2>
+                    <p class="section__text">
+                        Подключить CSS к HTML можно тремя способами:
+                    </p>
+                    <ol class="section__list">
+                        <li class="section__li"><span class="section__text_abb">Внутри HTML-тега</span>. Такой способ
+                            используется довольно редко и, как
+                            правило, для каких-то
+                            локальных целей. Реализуется он с помощью атрибута style. Код в этом случае выглядит
+                            следующим образом:</li>
+                        <figure class="section__figure_center">
+                            <img src="img/include_css01.png" alt="selector" class="section__img section__img_size02">
+                            <figcaption class="section__img-title">Подключение CSS в HTML-теге</figcaption>
+                        </figure>
+
+                        <li class="section__li">
+                            <span class="section__text_abb">Через тег &#60;style&#62;</span>. Этот тег располагают в
+                            &#60;head&#62; документа. Код при этом
+                            имеет такую структуру:
+                        </li>
+
+                        <figure class="section__figure_center">
+                            <img src="img/include_css02.png" alt="selector"
+                                class="section__img section__img_size">
+                            <figcaption class="section__img-title">Подключение CSS через тег &#60;style&#62;
+                            </figcaption>
+                        </figure>
+
+                        <li class="section__li">
+                            <span class="section__text_abb">С помощью внешнего CSS-файла</span>. Это наиболее
+                            распространенный вариант подключения, когда
+                            создается отдельный файл, которому присваивается имя, например, style.css. Это, по сути,
+                            текстовый документ, структура которого аналогична рассмотренной в предыдущем примере.
+                            Подключение к HTML-документу выполняется с помощью тега
+                            &#60;link&#62;, размещаемого в &#60;head&#62;. Выглядит это следующим образом:
+                        </li>
+
+                        <figure class="section__figure_center">
+                            <img src="img/include_css03.png" alt="selector"
+                                class="section__img section__img_size02">
+                            <figcaption class="section__img-title">Подключение CSS через внешний файл</figcaption>
+                        </figure>
+                    </ol>
+
+                    <h2 id="syntaxCSS" class="section__title_h2">Синтаксис CSS</h2>
+                    <figure class="section__figure">
+                        <img src="img/selector.png" alt="selector" class="section__img">
+                        <figcaption class="section__img-title">Синтаксис css-свойства</figcaption>
+                    </figure>
+
+                    <p class="section__text">
+                        У языка CSS относительно простой синтаксис. Сначала прописывается селектор — он выбирает
+                        конкретный элемент на странице. Потом, после фигурных скобок, указываются свойства со значениями
+                        — между ними ставится двоеточие. Сами свойства отделяются друг от друга точкой с запятой.
+                    </p>
+                    <p class="section__text">
+                        <span class="section__text_abb">Cелектор в CSS</span> - это конструкция, которая позволяет
+                        выбрать отдельные или однотипные
+                        элементы на странице, чтобы их стилизовать. С селектора начинается каждый блок объявлений в CSS:
+                    </p>
+                    <figure class="section__figure_center">
+                        <img src="img/class.png" alt="selector" class="section__img_size01">
+                        <figcaption class="section__img-title">Класс в качестве селектора</figcaption>
+                    </figure>
+                    <p class="section__text">
+                        В качестве селектора в примере используется my-class. Все элементы с этим классом получают
+                        единое оформление — желтый фон цвета yellow.
+                    </p>
+
+                    <h2 id="inheritСSS" class="section__title_h2">Наследование в CSS</h2>
+                    <p class="section__text">
+                        Все свойства CSS делятся на те, которые <span class="section__text_abb">наследуются
+                            элементами-потомками от своих
+                            элементов-предков</span>, и те, которые <span class="section__text_abb">не
+                            наследуются</span>. Так, например, если для параграфа задать
+                        границу (сформировать рамку), то все вложенные в него элементы (элементы-потомки) не унаследуют
+                        это свойство CSS, поскольку в данном случае наследование не имеет положительного эффекта.
+                        Но, если задать для абзаца, например, синий цвет
+                        шрифта, то он будет унаследован всеми элементами потомками до тех пор, пока его не
+                        переопределить
+                        для конкретного элемента, а это эффективнее, чем определять шрифт
+                        отдельно для каждого элемента-потомка. Узнать, какие стилевые свойства наследуются, а какие нет,
+                        можно в <a href="https://okmysite.com/css/css_spravochnik/spravochnik_po_css.html"
+                            class="section__link" target="_blanck">справочнике</a>.
+                    </p>
+
+                    <h2 id="cascadesCSS" class="section__title_h2">Каскады и приоритеты в CSS</h2>
+                    <img src="img/cascadesCSS.jpg" alt="cascadesCSS" class="section__img section__img_top">
+                    <p class="section__text">
+                        <span class="section__text_abb">Каскадирование стилей</span> – это встроенная особенность CSS,
+                        которая заключается в том, что если к
+                        элементу применяется сразу несколько стилей, то результирующий стиль будет сформирован из всех
+                        присутствующих в этих стилях видов свойств, при чем в случае наличия двух или более одинаковых
+                        свойств к элементу будет применено значение свойства с наибольшим в данной ситуации приоритетом.
+                    </p>
+
+                    <p class="section__text">
+                        Если к одному и тому же элементу применяются два правила, содержащие одинаковые свойства CSS, но
+                        имеющие разные значения, возникает конфликт, который может быть решен при помощи <span
+                            class="section__text_abb">сравнения
+                            специфичности селекторов этих правил</span>. В результате этого решения к элементу будет
+                        применено
+                        свойство правила, у которого специфичность селектора больше.
+                    </p>
+                    <p class="section__text">
+                        Расчет специфичности селектора производится при помощи трех чисел <span
+                            class="section__text_abb">(a, b, c)</span>. Происходит это
+                        следующим образом:
+                    </p>
+                    <ul class="section__list_ul">
+                        <li class="section__li">
+                            числу a присваивается количество идентификаторов в селекторе;
+                        </li>
+                        <li class="section__li">
+                            числу b присваивается суммарное количество классов, атрибутов и псевдоклассов в селекторе;
+                        </li>
+                        <li class="section__li">
+                            числу c присваивается суммарное количество элементов и псевдоэлементов.
+                        </li>
+                    </ul>
+                    <p class="section__text">
+                        После подсчета чисел у всех сравниваемых селекторов, селектором с большей специфичностью будет
+                        считаться тот, у которого больше число <span class="section__text_abb">a</span>, в независимости
+                        от величины чисел <span class="section__text_abb">b</span> и <span
+                            class="section__text_abb">c</span>. Если же у
+                        сравниваемых селекторов число <span class="section__text_abb">a</span> окажется одинаковым,
+                        будет сравниваться их число <span class="section__text_abb">b</span>, а в случае
+                        необходимости и число <span class="section__text_abb">c</span>.
+                    </p>
+                    <p class="section__text">
+                        Иерархия приоритетов в CSS работает следующим образом:
+                    </p>
+                    <ol class="section__list">
+                        <li class="section__li">
+                            Самый высокий приоритет у свойств, в конце объявления которых указано !important.
+                        </li>
+                        <li class="section__li">
+                            Затем идут инлайновые стили, которые прописываются в теге через атрибут style.
+                        </li>
+                        <li class="section__li">
+                            Ещё ниже приоритет стилей, заданных в теге style в самом документе.
+                        </li>
+                        <li class="section__li">
+                            Далее следуют стили, подключённые к документу как внешний CSS-файл с использованием тега
+                            link.
+                        </li>
+                    </ol>
+
+
+                    <p class="sectioт__text"></p>
+                </div>
+
+                <div class="section__block">
+                    <h1 id="aboutSCSS" class="section__title">Что такое SCSS/SASS?</h1>
+                    <img src="img/sass.jpg" alt="" class="section__img">
+                    <p class="section__text">
+                        <span class="section__text_abb">SCSS</span> — это препроцессор для написания CSS кода. SCSS дает
+                        дополнительные возможности. С ним
+                        можно использовать переменные, вложенные селекторы и медиазапросы, собирать несколько файлов в
+                        один, миксины, наследования и другие полезные вещи которые упростят и структурируют работу с CSS
+                        кодом.
+                    </p>
+                    <p class="section__text">
+                        <span class="section__text_abb">SCSS</span> пишется в отдельных файлах с расширением <span
+                            class="section__text_abb">.scss</span>, например <span
+                            class="section__text_abb">main.scss</span>.
+                        SCSS не подключается в браузер напрямую. Браузеры не умеют с ним работать. <span
+                            class="section__text_abb">SCSS компилируется
+                            (собирается) в привычный для браузера CSS код, и уже CSS файл подключается на
+                            страницу</span>.
+                        Для того чтобы скомпилировать SCSS в CSS нужно использовать компилятор. Это может быть
+                        специальная программа. Либо плагин для редактора. Или инструмент для сборки
+                        проекта: <span class="section__text_abb">Gulp, Webpack или другой</span>.
+                    </p>
+                    <p class="section__text">
+                        Особенности SCSS:
+                    </p>
+                    <ul class="section__list_ul">
+                        <li class="section__li">
+                            Это отдельный формат файла
+                        </li>
+                        <li class="section__li">
+                            Пишется в отдельных файлах с расширением .scss
+                        </li>
+                        <li class="section__li">
+                            SCSS не подключается в браузер напрямую
+                        </li>
+                        <li class="section__li">
+                            SCSS надо компилировать в CSS
+                        </li>
+                        <li class="section__li">
+                            Дает возможность использовать переменные, вложенные селекторы и медиазапросы, собирать
+                            несколько файлов в один, миксины, наследования и многое другое чтобы структурировать работу
+                            с CSS кодом
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="section__block">
+                    <h1 id="compare" class="section__title">Сравнение CSS и SCSS</h1>
+
+                    <ol class="section__list">
+                        <li class="section__li">Scss позволяет<span class="section__text_abb">вкладывать правила CSS
+                                друг в друга</span>.
+                            Вложенные правила применяются только для элементов, соответствующих внешним селекторам.
+                            Например:
+                        </li>
+                        <figure class="section__figure_center">
+                            <img src="img/scss_css01.png" alt="selector"
+                                class="section__img section__img_size section__img_size02">
+                            <figcaption class="section__img-title">Вложенность правил</figcaption>
+                        </figure>
+
+                        <li class="section__li">
+                            Иногда полезно использовать родительский селектор с другим предназначением, чем по
+                            умолчанию.
+                            В этих случаях, с помощью символа <span class="section__text_abb">&</span> вы можете явно
+                            указать, где должен быть вставлен родительский селектор, например:
+                        </li>
+
+                        <figure class="section__figure_center">
+                            <img src="img/scss_css02.png" alt="selector"
+                                class="section__img section__img_size section__img_size02">
+                            <figcaption class="section__img-title">Ссылка на родительский элемент </figcaption>
+                        </figure>
+                        Символ <span class="section__text_abb">&</span> будет заменен на родительский селектор, каким он
+                        компилируется в CSS.
+
+                        <li class="section__li">
+                            <span class="section__text_abb">Использование миксина</span>.
+                            Миксины вызываются в документ директивой @include. Она принимает имя миксина и, опционально,
+                            передаваемые в него аргументы, включает стили, определённые этим миксином, в текущее
+                            правило. Например:
+                        </li>
+
+                        <figure class="section__figure_center">
+                            <img src="img/scss_css03.png" alt="selector"
+                                class="section__img section__img_size section__img_size02">
+                            <figcaption class="section__img-title">Использоваие миксина</figcaption>
+                        </figure>
+                    </ol>
+
+                    <p class="section__text">
+                        Еще больше информации по SCSS/SASS можно посмотреть на <a href="https://sass-scss.ru/documentation/sintaksis/"
+                        class="section__link" target="_blanck">официальном сайте продукта</a>.
+                    </p>
+                </div>
+            </section>
+
+            <div class="date">
+                <label for="inputDate" class="date__label">Выберите дату или введите свою:</label>
+                <input type="date" id="inputDate" class="date__input">
+                <p class="date__text"></p>
+            </div>
+        </main>
+        <footer class="footer">
+
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
